@@ -1,0 +1,125 @@
+C:\code\server 폴더 생성
+- Servlet
+- JSP
+
+워크스페이스 변경 > 기본 설정
+1. 폰트
+2. 톰캣 
+  2.1 톰캣 설치 경로 매핑
+   2.2 톰캣 인스턴스 생성
+
+프로젝트 생성
+- Dynamic Web Project > "ServletTest" > "servlet"
+
+
+웹 페이지
+1. 정적 페이지 > 요청할때마다 소스가 변함없는 페이지
+	ex) webapp >teshtml
+	ex) 한국(홍길동), 미국(마이클)이 봐도 소스가 같음
+	
+2. 동적 페이지 > 요청할때마다 상황에 따라 소스가 변하는 페이지
+	ex) webapp > "test02.jsp
+	
+	
+
+커피 구매
+1. 정적 페이지: 자판기 or 마트 > 커피 구매(캔커피/ 소비자가 소비만 함)
+2. 동적 페이지: 카페 > 커피 구매(고객의 니즈 반영)
+
+
+
+Servelt, 서블릿
+- 웹 서버(=톰캣)에서 자바를 사용한 프로그램을 생산/동작시키는 기술
+- 서블릿으로 제작한 프로그램 > 웹 페이지 생성하기
+- 웹 서버측에서 동적으로 웹 페이지를 생성하는 기술
+
+Servlet > JSP > Servlet + JSP > ... > Spring
+
+Servlet Class
+- 서블릿 기술을 적용한 자바 클래스
+- 알바생
+- *** 클라이언트(브라우저)의 요청 발생 > 동적으로 웹 페이지 제작
+
+Servlet Container(=Servlet Engine)
+- 서버측에서 Servlet을 실행/관리할 수 있도록 해주는 환경(Runtime)
+- Servlet 객체 생성, 실행, 소멸 등.. 전반적인 관리
+- 대표 서블릿 컨테이너 > 톰캣(Tomcat)
+
+
+
+
+Servlet Class 작성 규칙 > 알바생 만들기
+
+1. 서블릿 클래스 선언
+	a. javax.servlet.Servlet 인터페이스를 구현한다. > 복잡함. 고비용
+	a. javax.servlet.http.HttpServlet 클래스를 상속받는다. > 단순함
+	
+	class Test implements Servlet {
+	}
+	
+	class Test extends HttpSevlet {
+	}
+
+2. doGet/doPost 메서드 선언 
+	- 둘 중 하나 선언 or 둘 다 선언
+	- 클라이언트(브라우저)의 요청이 들어오면 자동으로 (톰캣이) 호출하는 메서드 > "주문하기"
+	- 커피 만드는 메서드 > HTML 페이지 만드는 메서드
+	- 메서드 작성 규칙
+		a. 매개 변수 작성
+			1. javax.servlet.http.HttpServletRequest
+			2. javax.servlet.http.HttpServletResponse
+		b. 예외 미루기
+			1. java.io.IOException
+			2. javax.servlet.ServletException
+
+3. (동적으로) HTML 페이지 작성
+	- doGet/doPost 내부에서 HTML 문서를 작성하기 위한 자바 코드를 작성한다.(개발자)
+	- HttpSevletResponse 객체의 getWriter() 메서드 호출 > PrintWriter 객체 반환
+	- PrintWriter 객체 == 페이지 제작하는 도구
+		- .printXXX("HTML/CSS/JavaScript 코드 작성"); > HTML 페이지 생성
+	- 페이지 완성 > 브라우저 반환
+	
+
+
+
+- ServletTest > Java Resources > src/main/java > "com.test.java"
+	- "Ex01.java"
+	
+4. 서블릿 호출
+	- http://localhost:8080/servlet/servlet/com.test.java.Ex01
+	- 자바는 웹 기술이 아니다. > 웹에서는 자바 프로그램을 호출할 수 없다.
+	- 톰캣(웹서버)이 그 클라이언트의 요청을 받아서 대신 자바 프로그램을 호출한다.(Servlet Container 역할 중 하나)
+	- 자바 프로그램(서블릿)을 호출하기 위한 가상 주소를 생성
+	- webapp > WEB-INF > web.xml(톰캣 환경 설정 파일)
+	
+	
+	- http://localhost:8080/servlet/ex01
+	
+
+- ServletTest > Java Resources > src/main/java > "com.test.java"
+	- "Ex02.java"
+	
+- ServletTest > Java Resources > src/main/java > "com.test.java"
+	- "Ex03.java" 	> 데이터 입력 페이지
+	- "Ex03Ok.java" > 데이터 수신 페이지
+
+	
+	
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		

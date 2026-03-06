@@ -1,0 +1,79 @@
+JSP
+프로젝트 생성
+- Dynamic Web Project > "JSPTest" > "jsp" + web.xml(v)
+
+Servlet > 알바생
+- 자바 기반
+- 자바 코드 > 관리 용이
+- 클라이언트 코드 > 관리 불편(문자열 처리)
+
+JSP > 알바생
+- HTML 기반
+- 클라이언트 코드 > 관리 용이
+- 자바 코드 > 관리 약간 불편
+
+
+Servlet
+- server + let 
+- 자바는 브라우저가 호출 불가능 > 가상 주소
+
+JSP, Java Server Pages
+- 자바를 사용해서 서버측에서 웹 페이지를 만드는 기술
+- JSP는 서블릿입니다.(*****)
+- JSP는 톰캣이 HTML와 동일하게 취급 > 브라우저가 직접 호출 가능 
+
+Servlet/JSP Container > 톰캣
+
+
+JSP 구성 요소
+
+1. JSP 지시자, JSP Directive
+	- <%@ %>
+	- JSP Container(톰캣)에게 페이지 처리를 위한 여러가지 상황을 전달server
+	a. page 지시자
+	b. include 지시자
+	c. taglib 지시자
+
+2. 스크립트 요소, Scripting Elements
+	- <% %>
+	- 자바 코드와 관련된 기능들
+	a. 스크립틀릿, Scriptlet
+	b. 익스프레션, Expression
+	c. 선언부, Declaration 
+
+3. 액션 태그, Action Tags
+	- <jsp:태그명>, <c:태그명> 등..
+	- 프로그래밍 기능이 있는 태그
+
+4. 내장 객체, Built-in Objects
+	- 톰캣이 알아서 생성 후 개발자에게 제공하는 객체
+
+
+톰캣이 JSP 페이지를 어떻게 처리하는지?
+1. 간단한 버전
+
+
+2. 실제 버전
+
+
+
+page 지시자
+- webapp > "ex03.jsp"
+- JSP 페이지 실행과 관련된 여러가지 정보를 톰캣에게 알려주는 역할
+- JSP 페이지 첫줄에 작성한다.
+- page 지시자는 여러개 작성이 가능하다.
+
+- <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    a. language="java"
+    	- JSP 페이지에서 사용할 프로그래밍 언어 지정
+    	
+    b. contentType="text/html; charset=UTF-8"
+    	- 동적으로 생성된 페이지의 설정
+    	- text/html: MIME 타입
+    	- charset=UTF-8: 돌려줄 HTML 페이지의 인코딩
+    
+    c. pageEncoding="UTF-8"%
+    	- 현재 JSP 페이지의 설정
+
+

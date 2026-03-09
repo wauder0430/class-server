@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 <style>
 	/* CSS 영역 */
-	p { color: blue; }
+	p { color: blue; font-size: <%= a %>rem; }
 </style>
 </head>
 <body>

@@ -11,19 +11,25 @@
 	</style>
 </head>
 <body>
-	<!-- ex03.jsp -->
-	<h1>커뮤니티</h1>
+	<!-- ex12_out.jsp -->
+	<h1>구구단 <small>5단</small></h1>
 	
-	<p>저런 기능</p>
-	<p>저런 기능</p>
+	<% int dan = 5; %>
 	
-	<!-- 클라이언트 기술 > 브라우저에서 합치기 --> 
-	<iframe src="inc/copyright.jsp" width="800" scrolling="no" frameborder="no"></iframe>
+	<h2>스크립틀릿 + 표현식</h2>
 	
-	<!-- 서버 기술 > 톰캣에서 합치기 -->
-	<%@ include file="inc/copyright.jsp" %>
+	<% for(int i=1; i<=9; i++) { %>
+		<div><%= dan %> X <%= i %> = <%= dan * i %></div>
+	<% } %>
 	
+	<h2>out 객체</h2>
 	
+	<%
+		// out == PrintWriter
+		for(int i=1; i<=9; i++){
+			out.println(String.format("<div>%d x %d = %02d</div>", dan, i, dan*i));
+		}
+	%>
 	
 	<script src="https://code.jquery.com/jquery-4.0.0.js"></script>
 	<script src="https://bit.ly/4cMuheh"></script>

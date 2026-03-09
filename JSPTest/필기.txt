@@ -75,5 +75,157 @@ page 지시자
     
     c. pageEncoding="UTF-8"%
     	- 현재 JSP 페이지의 설정
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+
+include 지시자  
+- 조각 페이지 > 여러 페이지에서 재사용되는 코드  	
+
+
+스크립틀릿, Scriptlet
+- <% %>
+- Script + let(applet)
+- HTML 영역에서 자바 문법을 사용할 수 있는 영역을 제공	
+
+익스프레션, Expression
+- <%= %>
+- 자바의 값을 HTML 문서에 출력하는 역할
+- 화면(브라우저)에 출력하는 행동(X) > HTML 문서(소스)에 출력하는 행동(O)
+
+
+
+
+선언부, Declaration (현재 페이지에서만 재사용이 가능하므로 안씀)
+- <%! %>
+Servlet(*.java) == JSP(*html)
+
+- 반복되는 기능(자바코드) > 직접 클래스 사용
+	- Java Resources > src/main/java > "com.test.java" > "Myutil.java"
+
+1. 브라우저 > JSP요청
+2. 톰캣
+	2.1 JSP 파일 > (변환) > 서블릿 클래스 파일
+	2.2 서블릿 클래스 > 컴파일 > *.class
+	2.3 *.class 실행 > 인스턴스(메모리)
+	2.4 doGet() 호출
+	2.5 HTML 페이지 생성
+3. 톰캣
+	- HTML 페이지 반환
+    	
+    	
+    	
+    	
+
+내장 객체, Built-in Objects
+- 톰캣이 생성해서 제공한다.
+- 예약어로 제공된다.
+- request, response, session, pageContext
+- out, application
+- config, page, exception
+
+
+***** pageContext, request, session, application
+- 객체 내부에 사용자 데이터를 저장할 수 있는 컬렉션(Map)을 제공한다.
+- void setAttribute(String key, Object value)
+- Object getAttribute(String key)
+
+
+
+request 
+- HttpServletRequest
+- 서블릿의 doGet/doPost의 첫번째 매개변수 
+- 주로 클라이언트측에서 서버측으로 발생하는 모든 업무에 관여한다.
+
+1. 클라이언트에서 서보로 전송한 데이터를 가져오기
+	- "ex05.jsp"	> 사용자 데이터 입력 + 전송하기
+	- "ex05ok.jsp	> 전송된 데이터를 수신
+	
+	- "ex06.jsp"
+	- "ex06ok.jsp"
+	
+	- "ex07.jsp"
+	- "ex07ok.jsp"
+
+2. 클라이언트에서 서버로 전송한 데이터의 인코딩 처리
+
+3. 클라이언트에서 서버로 전송할 때의 여러가지 정보 확인
+	- "ex09.jsp"
+
+
+
+response 
+- HttpServletResponse
+- 서블릿의 doGet/doPost의 두번째 매개변수
+- 주로 서버측에서 클라이언트측으로 발생하는 모든 업무에 관여한다.
+
+1. 돌려줄 HTML 페이지 제작
+	- response.getWriter() > PrintWriter > HTML 제작
+
+2. 돌려줄 HTML 페이지의 인코딩 설정
+	- contentType="text/html; charset=UTF-8"
+	
+3. 돌려줄 HTML 페이지의 MIME 설정
+	- contentType="text/html; charset=UTF-8"
+	
+4. 페이지 이동하기
+	- "ex10_response_one.jsp"
+	- "ex10_response_two.jsp"
+	
+
+pageContext
+- "ex11_pagecontext_one.jsp"
+- "ex11_pagecontext_two.jsp"
+
+
+
+
+out
+- 출력 객체
+- "ex12_out.jsp"
+
+
+
+내장 객체의 생명 주기 ***
+- pageContext, request(***), session(***), application(예전-DB 계정 아이디/암호 <<< 보안 때문에 안함)
+- 데이터 저장 기능 때문에	
+
+- pageContext: 생성(페이지 요청) ~ 소멸(페이지 반환) + 조각 페이지
+- request: 생성(페이지 요청) ~ 소멸(페이지 반환)
+		   생성(페이지 이동) ~ 페이지 이동(forward) ~ 소멸(다음 페이지 반환)
+- session: 생성(사용자가 사이트에 처음 방문) ~ 소멸(사용자가 사이트에서 나갈 때)
+- application: 생성(사이트에 첫번째 사용자가 방문) ~ 소멸(사이트에 마지막 사용자가 나갈때)
+
+
+
+
+session(*****) & application
+- session: 데이터 저장 용도 > 개인 정보 저장용(개인 사물함)
+- application: 데이터 저장 용도 > 공용 정보 저장용(공용 사물함)
+
+- "ex13_session.jsp"
+- "ex13_session_2.jsp"
+
+- "ex14_session.jsp"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

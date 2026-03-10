@@ -216,10 +216,49 @@ session(*****) & application
 
 
 
+- "ex15_session.jsp"
+- "ex15_set.jsp"
+- "ex15_del.jsp"
+- "ex15_interval.jsp"
+- "ex15_reset.jsp"
+
+*** 웹(http://, https://)은 비연결 지향이다. (Connectionless)
 
 
 
 
+
+
+
+파일 업로드/다운로드
+- Servlet/JSP
+- cos.jar
+
+java project 선택 - java build path - classpath - add cos..jar
+
+dynamic web project일때
+WEB-INF - lib 에 cos.jar옮기기
+
+cos.jar <> Tomcat v10
+cos.jar == Tomcat v9
+
+단일 파일 업로드
+- "ex16.jsp"	// 입력 
+- "ex16ok.jsp" 	// 처리
+
+C:\code\server\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\JSPTest\files
+
+
+다중 파일 업로드
+- "ex17.jsp"
+- "ex17ok.jsp"
+
+
+
+이미지 뷰어(갤러리)
+- "ex18.jsp"  	// 메인 페이지
+- "ex18ok.jsp"  // 업로드 처리 페이지
+- "ex18del.jsp" // 삭제 처리 페이지
 
 
 

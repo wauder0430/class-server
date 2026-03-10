@@ -7,6 +7,8 @@
 <%
     // 디렉토리 탐색
     String path = application.getRealPath("/files");
+    System.out.println("path: " + path);
+
 
     File dir = new File(path);
     File[] list = dir.listFiles();

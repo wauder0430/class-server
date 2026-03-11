@@ -1,6 +1,3 @@
-package com.test.java;
-import java.sql.*;
-
 public class Ex01 {
 	public static void main(String[] args) {
 

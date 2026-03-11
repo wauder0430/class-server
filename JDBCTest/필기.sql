@@ -17,7 +17,7 @@ GRANT CONNECT, CREATE TABLE, CREATE SEQUENCE, CREATE VIEW, CREATE PROCEDURE, CRE
 -- 4. 저장 공간 설정
 -- USERS 테이블스페이스에 300MB 제한 (무분별한 용량 차지 방지)
 -- TEMP 테이블스페이스 임시 작업용
-ALTER USER team DEFAULT TABLESPACE users
+ALTER USER server DEFAULT TABLESPACE users
                QUOTA UNLIMITED ON users
                TEMPORARY TABLESPACE temp;
 

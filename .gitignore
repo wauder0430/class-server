@@ -278,3 +278,6 @@ Servers/
 .project
 .classpath
 .settings/
+
+*.iml
+*.idea/

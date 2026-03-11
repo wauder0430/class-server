@@ -1,5 +1,3 @@
-package com.test.java;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 

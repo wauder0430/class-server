@@ -7,8 +7,6 @@
 <%
     // 디렉토리 탐색
     String path = application.getRealPath("/files");
-    System.out.println("path: " + path);
-
 
     File dir = new File(path);
     File[] list = dir.listFiles();
@@ -32,7 +30,9 @@
     <title>Insert title here</title>
     <link rel="stylesheet" href="http://bit.ly/3WJ5ilK"/>
     <style>
-
+        table > tr:nth-child(2) > td:first-child {
+            text-align: left
+        }
     </style>
 </head>
 <body>
@@ -48,7 +48,14 @@
         </tr>
         <% for(File file : list) { %>
         <tr>
-            <td><div><%= utils.getExtension(file.getName()) %></div><div><%= file.getName() %></div></td>
+            <td>
+                <div>
+                    <span>
+                        <img src="<%= utils.getIconPath(file.getName()) %>" width="20" />
+                    </span>
+                    <span><%= file.getName() %></span>
+                </div>
+            </td>
             <td><%= utils.formatFileSize(file.length()) %></td>
             <td><%= String.format("%tF %tT", file.lastModified(), file.lastModified())%></td>
             <td><span onclick="del()" style="cursor:pointer;" data-filename="<%= file.getName() %>">🗑️</span>

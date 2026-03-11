@@ -12,10 +12,17 @@ public class utils {
         }
     }
 
+    // 확장자만 반환
     public static String getExtension(String fileName) {
         int idx = fileName.lastIndexOf(".");
         if (idx == -1) return ""; // 확장자 없는 파일
         return fileName.substring(idx + 1).toLowerCase();
+    }
+
+    // 아이콘 경로 반환
+    public static String getIconPath(String fileName) {
+        String extension = getExtension(fileName);
+        return "icon/" + extension + ".png";
     }
 
 }

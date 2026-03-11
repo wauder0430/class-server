@@ -5,7 +5,6 @@
 <%
     // 업로드한 파일 저장
     String path = application.getRealPath("/files");
-    System.out.println(path);
     int size = 1024 * 1024 * 100;
 
     try {

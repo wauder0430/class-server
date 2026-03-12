@@ -1,10 +1,12 @@
+package com.test.java;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Ex02_Connection {
     public static void main(String[] args) {
 
-        // Ex02_Connection
+        // com.test.java.Ex02_Connection
 
         Connection conn = null;
 

@@ -1,11 +1,12 @@
-import com.test.java.DBUtil;
+package com.test.java;
 
 import java.sql.Connection;
 
 public class Ex03_Connection {
     public static void main(String[] args) {
 
-        // Ex03_Connection.java
+
+        // com.test.java.Ex03_Connection.java
         DBUtil dbUtil = new DBUtil();
         Connection conn = null;
 

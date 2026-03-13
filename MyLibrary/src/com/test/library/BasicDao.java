@@ -1,0 +1,29 @@
+package com.test.library;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class BasicDao {
+	
+	private DBUtil util;
+	public Connection conn;
+	public Statement stat;
+	public PreparedStatement pstat;
+	public ResultSet rs;
+	
+	public BasicDao() {
+		
+		try {
+			util = new DBUtil();
+			conn = util.open();
+			stat = conn.createStatement();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+}
+

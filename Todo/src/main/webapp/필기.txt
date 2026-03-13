@@ -1,0 +1,38 @@
+새 프로젝트
+- Dynamic Web Project > "Todo" > "todo" + web.xml(x)
+
+할일 관리 사이트 
+- JSP Model 2
+- JDBC
+
+
+DB
+- "script.sql"
+
+
+
+라이브러리 
+- lib 	> ojdbc11.jar
+		> jstl-1.2.jar
+		> lombok.jar
+		
+		
+		
+패키지 구조 + 디렉터리 구조 + 파일 생성
+- "com.test.todo" 	> "Main.java"	// R > 시작 페이지
+					> "AddOk.java"	// C
+					> "CheckOk.java"// U
+					> "DelOk.java"	// D
+					
+- "com.test.todo.model" > todoDAO.java
+						> todoDTO.java
+						> DBUtil.java					
+					
+- webapp > "css" > "main.css"
+
+- webapp > WEB-INF > "views" > "main.jsp" > 시작 페이지
+							 > "addok>jsp"
+							 > "checkok.jsp"
+							 > "delok.jsp"
+							 > // 단독으로 호출하면 안되므로 Servlet을 이용해서 호출하게 WEB-INF에 보관(외부 접근 차단)
+							 

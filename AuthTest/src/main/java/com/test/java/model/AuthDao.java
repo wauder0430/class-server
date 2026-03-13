@@ -1,0 +1,44 @@
+package com.test.java.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import com.test.library.BasicDao;
+
+public class AuthDao extends BasicDao{
+	
+	public AuthDto login(AuthDto dto) {
+		
+		try {
+			// 로그인? 
+			String sql = "select * from tblUser where id = ? and pw = ?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getId());
+			pstat.setString(2, dto.getPw());
+			
+			rs = pstat.executeQuery();
+			
+			if(rs.next()) {
+				// 로그인 성공
+				dto.setGrade(rs.getString("grade"));
+				dto.setName(rs.getString("name"));
+				
+				return dto;
+				
+			} else {
+				// 로그인 실패
+				return null;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	
+}

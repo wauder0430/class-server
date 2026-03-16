@@ -46,7 +46,9 @@ public class LoginOk extends HttpServlet {
 			// 로그인 성공 > 인증 티켓 발급!!
 			// System.out.println(result);
 			
-			session.setAttribute("auth", id);
+			session.setAttribute("auth", id);	// 티켓
+			
+			session.setAttribute("authDto", dto); // 티켓 유저 정보
 			
 		} else { 
 			// 로그인 실패

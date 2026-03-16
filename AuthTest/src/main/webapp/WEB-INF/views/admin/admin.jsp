@@ -12,7 +12,10 @@
 	</style>
 </head>
 <body>
-	<!--  -->
+	<!-- admin.jsp -->
+	<h1>관리자 전용 페이지</h1>
+	
+	<div>관리자만 볼 수 있는 페이지입니다.</div>
 	
 	<script src="https://code.jquery.com/jquery-4.0.0.js"></script>
 	<script src="https://bit.ly/4cMuheh"></script>

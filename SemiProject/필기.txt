@@ -1,0 +1,86 @@
+새 프로젝트
+- Dynamic Web Project > "SemiProject" > "semi" > web.xml(v)
+
+세미 프로젝트
+- 회원 관리
+- 게시판(CRUD)
+
+1. 주제
+	- 미정
+	
+2. 요구분석
+	- 회원관리
+		- 가입
+		- 인증
+		- 탈퇴
+	- 게시판
+	- 기타 기능
+
+3. 페이지 구성(순서도 or 관계도)
+	- https://draw.io
+	
+4. 화면 설계도(와이어 프레임)
+	- 생략
+
+5. 스토리 보드
+	- 생략
+	
+6. 데이터베이스
+	- ERD
+	
+7. 스크립트
+	- DDL, DML(더미, 테스트용)
+	- SemiProject > "ddl.sql"
+			      > "dml.sql"
+
+8. 구현(*****)
+	- 패키지 > 서블릿
+	- 폴더 > JSP
+	- 기타 등등
+	
+	- "com.test.semi": 메인 패키지
+		- "Index.java": 시작
+		- "Template.java": 템플릿
+		
+	- "com.test.semi.user": 회원 패키지
+		- "UserService.java": 서비스 계층(객체)
+		- "Register.java": 회원 가입(폼+ 처리)
+		- "Unregister.java": 회원 탈퇴
+		- "Login.java": 로그인
+		- "Logout.java": 로그아웃
+		- "Info.java": 회원정보
+		
+	- "com.test.semi.model"
+		- "UserDao.java"
+		- "UserDto.java"
+	
+	- webapp > WEB-INF 
+	> views
+		- "index.jsp"
+		- "template.jsp" 
+	> views > user
+				- "register.jsp"
+				- "unregister.jsp"
+				- "login.jsp"
+				- "info.jsp"
+	
+	- 공통 리소스
+		- views > "inc"
+					- "asset.jsp"
+					- "header.jsp"
+		- webapp > "asset"
+					- "css"
+						- "main.css"
+					- "js"(X)
+						- "mian.js"
+					- "images"
+					- "pic": 프로필 사진
+	- 라이브러리
+		-lib 
+			- ojdbc
+			- mylibrary
+			- lombok
+			- jstl
+			- cos
+
+9. 마무리

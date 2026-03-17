@@ -26,5 +26,8 @@
 			<li><a href="/semi/user/logout.do">Logout</a></li>
 			<li><a href="/semi/user/info.do">Info</a></li>
 			</c:if>
+			
+			<li><a href="/semi/board/list.do">Board</a></li>
+			
 		</ul>
 	</header>

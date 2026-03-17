@@ -12,3 +12,14 @@ create table tblUser (
     regdate date DEFAULT sysdate NOT NULL ,
     ing number(1) DEFAULT 1             -- 활동유무(1-활동, 0-탈퇴)
 );
+
+-- 게시판 테이블
+create TABLE tblBoard (
+    seq number PRIMARY KEY ,
+    subject varchar2(500) NOT NULL ,
+    content varchar2(4000) not NULL ,
+    id varchar2(50) NOT NULL REFERENCES tblUser(id),
+    regdate date default sysdate NOT NULL ,
+    readcount number DEFAULT 0 not null
+);
+create SEQUENCE  seqBoard;

@@ -53,6 +53,17 @@
 	- "com.test.semi.model"
 		- "UserDao.java"
 		- "UserDto.java"
+		- "BoardDao.java"
+		- "BoardDto.java"
+		
+	- "com.test.semi.board": 게시판 패키지
+		- "List.java"
+		- "View.java"
+		- "Add.java"
+		- "Edit.java"
+		- "Del.java"
+		- "BoardService.java"
+	
 	
 	- webapp > WEB-INF 
 	> views
@@ -63,6 +74,12 @@
 				- "unregister.jsp"
 				- "login.jsp"
 				- "info.jsp"
+	> views > board
+				- "list.jsp"
+				- "view.jsp"
+				- "add.jsp"
+				- "edit.jsp"
+				- "del.jsp"
 	
 	- 공통 리소스
 		- views > "inc"

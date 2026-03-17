@@ -10,3 +10,15 @@ INSERT INTO TBLUSER (id, pw, name, email, lv, pic, intro, regdate, ing) VALUES (
 commit;
 SELECT *
 FROM TBLUSER ;
+
+select *
+from tblboard ORDER BY seq DESC ;
+
+select
+    seq, subject, id, regdate, readcount,
+    (select name from tblUser where id = tblBoard.id) as name
+from TBLBOARD order by seq desc;
+
+update tblBoard set regdate = regdate -2 where seq in (1,2);
+update tblBoard set regdate = regdate -1 where seq in (3,4);
+commit;

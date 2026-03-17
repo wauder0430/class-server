@@ -11,4 +11,19 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.xhtml</welcome-file>
   </welcome-file-list>
+  
+  <!-- 필터 등록 -->
+  <filter>
+  	<filter-name>encoding</filter-name>
+  	<filter-class>com.test.semi.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>encoding</filter-name>
+  	<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  
+  
+  
 </web-app>
+
+

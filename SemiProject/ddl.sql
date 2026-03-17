@@ -23,3 +23,13 @@ create TABLE tblBoard (
     readcount number DEFAULT 0 not null
 );
 create SEQUENCE  seqBoard;
+
+create or REPLACE view vwBoard
+AS
+select
+    seq, subject, id, regdate, readcount,
+    (select name from tblUser where id = tblBoard.id) as name,
+    (sysdate-regdate) as isnew
+from TBLBOARD order by seq desc;
+
+select * from vwBoard;

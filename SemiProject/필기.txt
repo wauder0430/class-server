@@ -64,6 +64,9 @@
 		- "Del.java"
 		- "BoardService.java"
 	
+	- "com.test.semi.filter" > web.xml 등록
+		- "EncodingFilter.java" 
+	
 	
 	- webapp > WEB-INF 
 	> views

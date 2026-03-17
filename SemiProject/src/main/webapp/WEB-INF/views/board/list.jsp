@@ -26,11 +26,11 @@
 				<th>날짜</th>
 				<th>읽음</th>
 			</tr>		
-			<c:forEach items="${list}" var="dto"> 
+			<c:forEach items="${list}" var="dto">
 			<tr>
 				<td>${dto.seq}</td>
 				<td>
-					${dto.subject}
+					<a href="/semi/board/view.do?seq=${dto.seq}">${dto.subject}</a>
 					<!-- 최신글 표시 -->
 					<c:if test="${dto.isnew < 1 }">
 						<span class="isnew">new</span>

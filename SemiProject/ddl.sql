@@ -33,3 +33,5 @@ select
 from TBLBOARD order by seq desc;
 
 select * from vwBoard;
+
+

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.test.semi.model.BoardDto;
 
@@ -22,9 +23,14 @@ public class List extends HttpServlet {
 		// 1. DB 작업 > select
 		// 2. 결과 > JSP 호출하기
 		
+		HttpSession session = req.getSession();
+		
 		BoardService service = new BoardService();
 		
 		ArrayList<BoardDto> list = service.list();
+		
+		// 조회수 증가 방지 티켓
+		session.setAttribute("read", "n");
 		
 		req.setAttribute("list", list);
 

@@ -53,7 +53,7 @@ public class Add extends HttpServlet {
 		if(result > 0) {
 			resp.sendRedirect("/semi/board/list.do");
 		} else {
-			resp.getWriter().print("<script>alert('글쓰기를 실패했습니다.');</script>");
+			resp.getWriter().print("<script>alert('글쓰기를 실패했습니다.');history.back();</script>");
 			resp.getWriter().close();
 		}
 		

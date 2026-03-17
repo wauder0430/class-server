@@ -22,3 +22,8 @@ from TBLBOARD order by seq desc;
 update tblBoard set regdate = regdate -2 where seq in (1,2);
 update tblBoard set regdate = regdate -1 where seq in (3,4);
 commit;
+
+
+select a.*, (select name from tblUser where id = a.id) as name from TBLBOARD a;
+
+update TBLBOARD

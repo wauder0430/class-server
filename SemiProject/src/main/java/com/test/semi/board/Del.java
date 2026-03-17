@@ -35,7 +35,7 @@ public class Del extends HttpServlet {
 		BoardService service = new BoardService();
 		
 		int result = service.del(seq);
-		System.out.println(result);
+		//System.out.println(result);
 		
 		if(result > 0) {
 			resp.sendRedirect("/semi/board/list.do");

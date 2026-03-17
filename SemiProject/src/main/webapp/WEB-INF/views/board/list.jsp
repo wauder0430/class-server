@@ -46,7 +46,9 @@
 		<hr>
 		
 		<div>
+			<c:if test="${not empty auth}">
 			<button type="button" class="add primary" onclick="location.href='/semi/board/add.do';">쓰기</button>
+			</c:if>
 		</div>
 		
 	</div>

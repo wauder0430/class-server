@@ -38,7 +38,7 @@
 			<input type="button" value="이동하기" id="btnPage" onclick="location.href='/semi/board/list.do?page=' + $('#page').val();">
 		</div> --%>
 		
-		<div id="pagebar">
+		<%-- <div id="pagebar">
 			<select onchange="location.href='/semi/board/list.do?page=' + $(this).val();">
 				<c:forEach var="i" begin="1" end="${map.totalPage}">
 					<c:if test="${map.nowPage == i}">
@@ -49,7 +49,7 @@
 					</c:if>
 				</c:forEach>
 			</select>
-		</div>
+		</div> --%>
 		
 		<table id="list">
 			<tr>

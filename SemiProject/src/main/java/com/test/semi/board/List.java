@@ -105,8 +105,55 @@ public class List extends HttpServlet {
 		// 페이지 바 생성하기
 		String pagebar = "";
 		
-		pagebar = "";
+		/*
+		 * for(int i=1; i<=totalPage; i++) {
+		 * 
+		 * pagebar += String.format(" <a href='/semi/board/list.do?page=%d'>%d</a>", i,
+		 * i);
+		 * 
+		 * }
+		 */
+
+		// list.do?page=1
+		// [이전] 1 2 3 4 5 6 7 8 9 10 [다음]
 		
+		// list.do?page=6
+		// [이전] 1 2 3 4 5 6 7 8 9 10 [다음]
+		
+		// list.do?page=10
+		// [이전] 1 2 3 4 5 6 7 8 9 10 [다음]
+
+		// list.do?page=11
+		// [이전] 11 12 13 14 15 16 17 18 19 20 [다음]
+		
+		loop = 1; // 루프 변수(10바퀴)
+		n = ((nowPage - 1) / blockSize) * blockSize + 1; // 시작 페이지 번호
+		
+		// 이전 10페이지
+		if(n == 1) {
+			pagebar += String.format(" <a href='#!'>[이전 %d페이지]</a>", blockSize);
+		} else {
+			pagebar += String.format(" <a href='/semi/board/list.do?page=%d'>[이전 %d페이지]</a>", (n-1), blockSize);
+		}
+		
+		
+		
+		while(!(loop > blockSize || n > totalPage)) {
+			if(n == nowPage) {
+				pagebar += String.format(" <a href='#!' style='color:tomato';>%d</a>", n);
+			} else {
+				pagebar += String.format(" <a href='/semi/board/list.do?page=%d'>%d</a>", n, n);
+			}
+			loop++;
+			n++;
+		}
+		
+		// 다음 10페이지
+		if(n >= totalPage) {
+			pagebar += String.format(" <a href='#!'>[다음 %d페이지]</a>", blockSize);
+		} else {
+			pagebar += String.format(" <a href='/semi/board/list.do?page=%d'>[다음 %d페이지]</a>", n, blockSize);
+		}
 		
 		req.setAttribute("pagebar", pagebar);
 		

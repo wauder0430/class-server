@@ -47,7 +47,7 @@
 		<div>
 			<button type="button" class="back" onclick="location.href='/semi/board/list.do?search=${map.search}&column=${map.column}&word=${map.word}';">돌아가기</button>
 		
-			<button type="button" class="back" onclick="history.back();">돌아가기</button>
+			<!-- <button type="button" class="back" onclick="history.back();">돌아가기</button> -->
 			
 			<c:if test="${not empty auth and (auth == dto.id) || (authDto.lv == '2')}">
 			<button type="button" class="edit primary" onclick="location.href='/semi/board/edit.do?seq=${dto.seq}';">수정하기</button>

@@ -29,10 +29,22 @@ AS
 select
     seq, subject, id, regdate, readcount, content,
     (select name from tblUser where id = tblBoard.id) as name,
-    (sysdate-regdate) as isnew
+    (sysdate-regdate) as isnew,
+    (select count(*) from tblComment where bseq = tblBoard.seq) as commentCount
 from TBLBOARD order by seq desc;
 
 select * from vwBoard;
 
 
 
+-- 댓글 테이블
+create table tblComment(
+    seq number PRIMARY KEY ,
+    content varchar2(2000) NOT NULL ,
+    regdate date DEFAULT sysdate NOT NULL ,
+    id varchar2(50) NOT NULL REFERENCES tblUser(id),
+    bseq number not NULL REFERENCES tblBoard(seq)
+);
+create SEQUENCE seqComment;
+
+select * from tblComment order by seq;

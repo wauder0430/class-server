@@ -68,6 +68,12 @@
 				view.do?seq=10&search=y&column=content&word=자바 -->
 				
 					<a href="/semi/board/view.do?seq=${dto.seq}&search=${map.search}&column=${map.column}&word=${map.word}">${dto.subject}</a>
+
+					<!-- 댓글 표시 -->
+					<c:if test="${dto.commentCount > 0}">
+						<span class="commentCount">(${dto.commentCount})</span>
+					</c:if>
+					
 					<!-- 최신글 표시 -->
 					<c:if test="${dto.isnew < 1 }">
 						<span class="isnew">new</span>
@@ -83,7 +89,7 @@
 		<!-- 
 			가이드 라인
 			1. <form method="POST"> : 기본
-			2. <form method="GET">  : 가끔
+			2. <form method="GET">  : 가끔(검색)
 		 -->
 		<!-- 검색 -->
 		<form method="GET" action="/semi/board/list.do" id="searchForm">

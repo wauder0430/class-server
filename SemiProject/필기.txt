@@ -55,6 +55,8 @@
 		- "UserDto.java"
 		- "BoardDao.java"
 		- "BoardDto.java"
+		- "CommentDao.java"
+		- "CommentDto.java"
 		
 	- "com.test.semi.board": 게시판 패키지
 		- "List.java"
@@ -63,6 +65,11 @@
 		- "Edit.java"
 		- "Del.java"
 		- "BoardService.java"
+		
+	- "com.test.semi.board.comment" : 댓글 패키지
+		- "AddComment.java"
+		- "DelComment.java"
+		- "EditComment.java"
 	
 	- "com.test.semi.filter" > web.xml 등록
 		- "EncodingFilter.java"
@@ -138,3 +145,9 @@
 - 게시물을 일정 개수만큼 가져오는 기법
 - 페이지 개념 > 오라클 (rownum, fetch)
 - com.test.semi.board > "Dummy.java"
+
+댓글 기능 및 
+제목 옆 댓글 수 추가 
+vwBoard 뷰 수정
+list.jsp에서 처리
+view.jsp에서 처리

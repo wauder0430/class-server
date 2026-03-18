@@ -18,5 +18,6 @@ public class BoardDto {
 	
 	private String name;	// 작성자
 	private Double isnew;	// 최신글
+	private String commentCount; // 댓글수
 	
 }

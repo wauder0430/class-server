@@ -43,3 +43,7 @@ select * from TBLBOARD where SUBJECT like '%프로그램%';
 -- 페이징
 select * from (select a.*, rownum as rnum from vwBoard a)
     where rnum BETWEEN 1 and 10;
+
+
+
+select a.*, (select name from tblUser where id = a.id) as name from tblComment a where seq = 275 order by seq asc;

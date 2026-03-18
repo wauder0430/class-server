@@ -80,6 +80,7 @@ public class BoardDao extends BasicDao{
 				
 				dto.setName(rs.getString("name"));
 				dto.setIsnew(rs.getDouble("isnew"));
+				dto.setCommentCount(rs.getString("commentCount"));
 				
 				list.add(dto);
 			}

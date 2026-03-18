@@ -33,7 +33,7 @@
 			</tr>
 			<tr>
 				<th style="height: 250px;">내용</th>
-				<td><c:out value="${dto.content}" /></td>
+				<td>${dto.content}</td>
 			</tr>
 			<tr>
 				<th>날짜</th>
@@ -45,7 +45,10 @@
 			</tr>
 		</table>
 		<div>
-			<button type="button" class="back" onclick="location.href='/semi/board/list.do';">돌아가기</button>
+			<button type="button" class="back" onclick="location.href='/semi/board/list.do?search=${map.search}&column=${map.column}&word=${map.word}';">돌아가기</button>
+		
+			<button type="button" class="back" onclick="history.back();">돌아가기</button>
+			
 			<c:if test="${not empty auth and (auth == dto.id) || (authDto.lv == '2')}">
 			<button type="button" class="edit primary" onclick="location.href='/semi/board/edit.do?seq=${dto.seq}';">수정하기</button>
 			<button type="button" class="del primary" onclick="location.href='/semi/board/del.do?seq=${dto.seq}';">삭제하기</button>

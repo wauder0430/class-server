@@ -23,7 +23,23 @@ update tblBoard set regdate = regdate -2 where seq in (1,2);
 update tblBoard set regdate = regdate -1 where seq in (3,4);
 commit;
 
-
 select a.*, (select name from tblUser where id = a.id) as name from TBLBOARD a;
 
-update TBLBOARD
+-- 게시판 검색(제목, 내용, 글쓴이)
+select * from TBLBOARD where SUBJECT like '%안녕%';
+select * from TBLBOARD where CONTENT like '%안녕%';
+select * from TBLBOARD where ID like '%안녕%';
+
+select * from TBLBOARD where SUBJECT like '%안녕%' or CONTENT like '%안녕%';
+
+select * from TBLBOARD where SUBJECT like '%안녕%' or regdate BETWEEN ('2026-01-01', );
+
+-- 전문적인 검색 환경 > Elastic Serach
+select * from TBLBOARD where SUBJECT like '%자바%';
+select * from TBLBOARD where SUBJECT like '%Java%';
+select * from TBLBOARD where SUBJECT like '%프로그램%';
+
+
+-- 페이징
+select * from (select a.*, rownum as rnum from vwBoard a)
+    where rnum BETWEEN 1 and 10;

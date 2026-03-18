@@ -27,11 +27,12 @@ create SEQUENCE  seqBoard;
 create or REPLACE view vwBoard
 AS
 select
-    seq, subject, id, regdate, readcount,
+    seq, subject, id, regdate, readcount, content,
     (select name from tblUser where id = tblBoard.id) as name,
     (sysdate-regdate) as isnew
 from TBLBOARD order by seq desc;
 
 select * from vwBoard;
+
 
 

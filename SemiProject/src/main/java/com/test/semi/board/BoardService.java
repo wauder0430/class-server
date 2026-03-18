@@ -2,6 +2,7 @@ package com.test.semi.board;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
 import com.test.semi.model.BoardDao;
 import com.test.semi.model.BoardDto;
@@ -16,14 +17,16 @@ public class BoardService {
 		return dao.add(dto);
 	}
 
-	public ArrayList<BoardDto> list() {
+	public ArrayList<BoardDto> list(HashMap<String, String> map) {
 
 		BoardDao dao = new BoardDao();
 		
-		ArrayList<BoardDto> list = dao.list();
+		ArrayList<BoardDto> list = dao.list(map);
+		
 		
 		Calendar now = Calendar.getInstance();
 		String nowDate = String.format("%tF", now);
+		
 		
 		// 데이터 조작(가공)
 		for(BoardDto dto : list) {
@@ -76,6 +79,9 @@ public class BoardService {
 		// 개행 문자 처리
 		String content = dto.getContent();
 		
+		//태그 이스케이프
+		content = content.replace("<", "&lt;").replace(">", "&gt;");
+		
 		content = content.replace("\r\n", "<br>");
 		
 		dto.setContent(content);
@@ -104,6 +110,13 @@ public class BoardService {
 		BoardDao dao = new BoardDao();
 		
 		return dao.del(seq);
+	}
+
+	public int getTotalCount(HashMap<String, String> map) {
+
+		BoardDao dao = new BoardDao();
+		
+		return dao.getTotalCount(map);
 	}
 
 }
